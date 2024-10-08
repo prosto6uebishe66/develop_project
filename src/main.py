@@ -1,14 +1,12 @@
-from output import format_from_account
-from output import date_show
-from output import get_sort_transaction
-from output import format_to_account
+from utills import format_from_account
+from utills import date_show
+from utills import get_sort_transaction
 
 
 def five_transactions(json_path):
-    five_transaction = []
     transactions = get_sort_transaction(json_path)
     # Получаем последние 5 транзакций
-    five_transaction = transactions[-5:] if len(transactions) >= 5 else transactions
+    five_transaction = transactions[:5] if len(transactions) >= 5 else transactions
     return five_transaction
 
 def get_transaction(json_path):
@@ -29,7 +27,7 @@ def get_transaction(json_path):
         if to_account_str is None:
             to_account_str = ""
 
-        info_str_2 = f'{from_account_str} {to_account_str}\n'
+        info_str_2 = f'{from_account_str} -> {to_account_str}\n'
 
         # Форматируем сумму и валюту
         operation_amount = ex.get("operationAmount", {})

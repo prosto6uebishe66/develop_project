@@ -19,22 +19,22 @@ def date_show(date_str: str):
 def format_from_account(write_off: str):
     if write_off is None:
         return None  # Возвращаем None, если write_off - None
-    account = write_off.split()
-    account_first = account[:-1]
-    account_first = ' '.join(account_first)
-    account_second = account[-1]
-    account = (account_first + ' ' + account_second[0:4] + ' ' +
-               account_second[4:6] + ' ' + '****' + ' ' +
-               account_second[-4:])
-    return account
+    if write_off[:4] == 'Счет':
+        account = write_off.split()
+        account_first = account[:-1]
+        account_second = account[-1]
+        account_first = ' '.join(account_first)
+        account = account_first + ' **' + account_second[-4:]
 
+    else:
 
-def format_to_account(write_to: str):
-    account = write_to.split()
-    account_first = account[:-1]
-    account_second = account[-1]
-    account_first = ' '.join(account_second)
-    account = account_first + ' ' + '' + account_second[-4:]
+        account = write_off.split()
+        account_first = account[:-1]
+        account_first = ' '.join(account_first)
+        account_second = account[-1]
+        account = (account_first + ' ' + account_second[0:4] + ' ' +
+                   account_second[4:6] + '** ' + '****' + ' ' +
+                   account_second[-4:])
     return account
 
 
