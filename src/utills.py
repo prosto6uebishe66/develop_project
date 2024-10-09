@@ -1,8 +1,5 @@
 import json
-import os
 from datetime import datetime
-
-from develop_project.config import OPERATION_PATH
 
 
 def date_format(date_str: str):
