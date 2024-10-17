@@ -4,10 +4,10 @@ import tempfile
 from datetime import datetime
 
 import pytest
-from src.utills import date_format
-from src.utills import date_show
-from src.utills import format_from_account
-from src.utills import get_sort_transaction
+from develop_project.src.utills import date_format
+from develop_project.src.utills import date_show
+from develop_project.src.utills import format_from_account
+from develop_project.src.utills import get_sort_transaction
 
 
 #Проверка для функции `date_format`

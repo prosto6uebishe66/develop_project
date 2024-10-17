@@ -1,6 +1,7 @@
-from utills import format_from_account
-from utills import date_show
-from utills import get_sort_transaction
+from develop_project.config import OPERATION_PATH
+from develop_project.src.utills import format_from_account
+from develop_project.src.utills import date_show
+from develop_project.src.utills import get_sort_transaction
 
 
 def five_transactions(json_path):
@@ -43,4 +44,6 @@ def get_transaction(json_path):
 
     return info_str
 
-print(get_transaction('operation.json'))
+
+if __name__=="__main__":
+    print(get_transaction(OPERATION_PATH))

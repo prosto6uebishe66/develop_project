@@ -1,0 +1,7 @@
+[tool:coverage]
+branch = True
+source = ./src/
+include = src/*
+omit = *tests*
+report = term-missing
+cov_report = html
